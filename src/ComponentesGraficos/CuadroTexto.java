@@ -9,7 +9,7 @@ package ComponentesGraficos;
  *
  * @author Itzel
  */
-public class CuadroTexto implements API{
+public class CuadroTexto extends Componentes implements API {
 
     @Override
     public void exececuteAP() {
@@ -17,22 +17,41 @@ public class CuadroTexto implements API{
     }
     @Override
     public String toString() {
-        return "Boton";
+        return "Cuadro de Texto";
     }
     
     protected String titulo;
     protected String texto;
     protected String contraseña;
-    protected String alineacion;
-    protected String multilinea;
-    protected Font font;
+    protected String alineacion; //enumerador 
+    protected String lineas;
+    
+    ///CONSTRUCTOR//////
+    public CuadroTexto() {
+    }
+
+    public void setAlto(double alto) {
+        this.alto = alto;
+    }
+
+    public void setAncho(double ancho) {
+        this.ancho = ancho;
+    }
+
+    public double getAlto() {
+        return alto;
+    }
+
+    public double getAncho() {
+        return ancho;
+    }
 
     public String getAlineacion() {
         return alineacion;
     }
 
-    public String getMultilinea() {
-        return multilinea;
+    public String getLineas() {
+        return lineas;
     }
 
     public String getTitulo() {
@@ -55,38 +74,70 @@ public class CuadroTexto implements API{
         this.texto = texto;
     }
 
-    public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
+    public void setContraseña() {
+            
+        this.contraseña = "XXXX";
+        System.out.println("La contraseña es XXXX");
     }
 
     public void setAlineacion(String alineacion) {
-        this.alineacion = alineacion;
-    }
-
-    public void setMultilinea(String multilinea) {
-        this.multilinea = multilinea;
-    }
-    
-
-    public CuadroTexto(String titulo, String texto, String contraseña) {
-        if (contraseña.equals("SI")) {
-            this.titulo = titulo;
-            this.texto = texto;
-            this.contraseña = "xxxx";
+        try {
+            this.alineacion = alineacion;
+            TipoDeEstlio al = new TipoDeEstlio();
+            System.out.println("El tipo de alineacion que eligio es: " + 
+            TipoDeEstlio.Alineacion.valueOf(alineacion));
+            //System.out.println(TipoDeEstlio.Alineacion.valueOf(alineacion));
         }
-        else {
-            this.titulo = titulo;
-            this.texto = texto;
-        }  
+        catch(Exception e){            
+            CuadroTexto cu = new CuadroTexto();
+            cu.tipo();
+            //System.out.println("Intente de nuevo");
+        }
+        
+    }
+
+    public void setLineas(String lineas) {
+        try {
+            this.lineas = lineas;
+            TipoDeEstlio al = new TipoDeEstlio();
+            System.out.println("El tipo de tamaño que eligio es: " + 
+            TipoDeEstlio.Tamaño.valueOf(lineas));
+            //System.out.println(TipoDeEstlio.Tamaño.valueOf(lineas));
+            if (lineas == "MULTILINEA") {
+                Scroll s = new Scroll();
+                s.addScroll();
+            }
+        }
+        catch(Exception e){            
+            CuadroTexto cu = new CuadroTexto();
+            cu.tipo();
+            //System.out.println("Intente de nuevo");
+        }
     }
     
-    public void alineacion(String tipo){
-        System.out.println("Eligiendo alineacion " + tipo);
-        this.alineacion = tipo;
-    }
-    
-    public void setfont(Font font){
-        this.font = font;
+    public void setfont(String estilo){
+        Font f = new Font(estilo);
+        f.setEstilo(estilo);
     } 
+
+    public void setPuntos(double puntos) {
+        Font f = new Font(puntos);
+    }
+    
+    public void getPuntos(double puntos) {
+        Font f = new Font(puntos);
+        f.getPuntos();
+    }
+    
+    @Override
+    public String tipo() {
+        System.out.println("////////////////////////////");
+        System.out.println("Los valores deben ser introducidos en mayusculas");
+        System.out.println("Solo se puede ultizar la alineacion: ");
+        System.out.println("Centrada, Justificada, Izquierda o Derecha");
+        System.out.println("El tamaño solo puede ser de UnaLinea o multilineas");
+        return "";
+    }
+    
     
 }

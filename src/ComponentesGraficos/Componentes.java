@@ -9,9 +9,11 @@ package ComponentesGraficos;
  *
  * @author Itzel
  */
-public class Componentes {
+public abstract class Componentes {
     
     protected double  alto;
     protected double ancho;
+    
+    public abstract String tipo();
 
 }

@@ -9,42 +9,57 @@ package ComponentesGraficos;
  *
  * @author Itzel
  */
-public class Font {
+public class Font extends CuadroTexto{
    
-    protected int tamaño;
-    protected String tipo;
+    protected double puntos;
     protected String estilo;
 
-    public void setTamaño(int tamaño) {
-        this.tamaño = tamaño;
-    }
-
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
+    public void setPuntos(double puntos) {
+        this.puntos = puntos;
     }
 
     public void setEstilo(String estilo) {
-        this.estilo = estilo;
+        try {
+            this.estilo = estilo;
+            TipoDeEstlio al = new TipoDeEstlio();
+            System.out.println("El tipo de tamaño que eligio es: " + 
+            TipoDeEstlio.Estilo.valueOf(estilo));
+            System.out.println(TipoDeEstlio.Estilo.valueOf(estilo));
+        }
+        catch(Exception e){            
+            Font f = new Font();
+            f.tipo();
+            System.out.println("Intente de nuevo");
+        }
     }
 
-    public int getTamaño() {
-        return tamaño;
-    }
-
-    public String getTipo() {
-        return tipo;
+    public double getPuntos() {
+        return puntos;
     }
 
     public String getEstilo() {
         return estilo;
     }
 
-    public Font(int tamaño, String tipo, String estilo) {
-        this.tamaño = tamaño;
-        this.tipo = tipo;
+    public Font() {
+    }
+
+    public Font(String estilo) {
         this.estilo = estilo;
     }
+
+    public Font(double puntos) {
+        this.puntos = puntos;
+    }
     
+    
+    @Override
+    public String tipo() {
+        System.out.println("////////////////////////////");
+        System.out.println("Los valores deben ser introducidos en mayusculas");
+        System.out.println("Solo se puede seleccionar CURSIVAS, NEGRITAS, TACHADO y SUBRAYADO");
+        return "";
+    }
     
     
     

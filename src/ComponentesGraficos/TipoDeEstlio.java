@@ -9,13 +9,11 @@ package ComponentesGraficos;
  *
  * @author Itzel
  */
-public interface API {
+public class TipoDeEstlio {
     
-    public void exececuteAP();
-    
-    
-    public String toString(); //preguntar por que no automatico
-    //public Font setFont();
+    public enum Alineacion {CENTRADA, IZQUIERDA, DERECHA, JUSTIFICADO}
+    public enum Estilo {NEGRITAS, CURSIVAS, SUBRAYADO, TACHADO}
+    public enum Tamaño {UNALINEA, MULTILINEA}
     
     
 }

@@ -20,5 +20,10 @@ public class Pintura extends Componentes implements API{
     public String toString() {
         return "Pintura";
     }
+
+    @Override
+    public String tipo() {
+        return "";
+    }
     
 }

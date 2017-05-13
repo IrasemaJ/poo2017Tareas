@@ -11,24 +11,25 @@ package ComponentesGraficos;
  */
 public class Buttons extends Componentes implements API{
     
+    //extends solo de una implements de muchas
     protected String etiqueta;
-    protected Action action;
-
-    public String getEtiqueta() {
-        return etiqueta;
-    }
-
-    public void setEtiqueta(String etiqueta) {
-        this.etiqueta = etiqueta;
-    }
 
     public Buttons(String etiqueta) {
         this.etiqueta = etiqueta;
     }
     
-    public void addAction(Action accion){
-        this.action = accion;
-        
+    public void setAction(){
+        Action a = new Action(etiqueta);
+    }
+    
+    public String getAction(){
+        return etiqueta;
+    }
+
+    public void setEtiqueta(String etiqueta) {
+        this.etiqueta = etiqueta;
+        Buttons b = new Buttons(etiqueta);
+        b.setAction();
     }
 
     public void setAlto(double alto) {
@@ -37,10 +38,6 @@ public class Buttons extends Componentes implements API{
 
     public void setAncho(double ancho) {
         this.ancho = ancho;
-    }
-
-    public Action getAction() {
-        return action;
     }
 
     public double getAlto() {
@@ -60,4 +57,11 @@ public class Buttons extends Componentes implements API{
     public String toString() {
         return "Boton";
     }
+
+    @Override
+    public String tipo() {
+        return "";
+    }
+    
+    
 }

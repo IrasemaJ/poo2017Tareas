@@ -10,9 +10,13 @@ package ComponentesGraficos;
  * @author Itzel
  */
 public class Scroll {
-    
+
     public Scroll() {
-        CuadroTexto c = new CuadroTexto("Tarea", "Hola Mundo", "SI");
     }
+    
+    public void addScroll(){
+        System.out.println("Creando barra de Scroll");
+    }
+    
      
 }
