@@ -34,6 +34,14 @@ public class Test {
         cu.setPuntos(10.0);
         cu.setTexto("Como estas?");
         
+        API [] arreglo = new API[3];
+        arreglo[0] = cu;
+        arreglo[1] = b;
+        
+        for (int i = 0; i < 2; i++) {
+            System.out.println("///////////////////");
+            System.out.println("Es de Tipo: " + arreglo[i].toString());
+        }
         
     }
  

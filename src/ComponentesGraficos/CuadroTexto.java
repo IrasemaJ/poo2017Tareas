@@ -83,7 +83,6 @@ public class CuadroTexto extends Componentes implements API {
     public void setAlineacion(String alineacion) {
         try {
             this.alineacion = alineacion;
-            TipoDeEstlio al = new TipoDeEstlio();
             System.out.println("El tipo de alineacion que eligio es: " + 
             TipoDeEstlio.Alineacion.valueOf(alineacion));
             //System.out.println(TipoDeEstlio.Alineacion.valueOf(alineacion));
@@ -99,7 +98,6 @@ public class CuadroTexto extends Componentes implements API {
     public void setLineas(String lineas) {
         try {
             this.lineas = lineas;
-            TipoDeEstlio al = new TipoDeEstlio();
             System.out.println("El tipo de tamaño que eligio es: " + 
             TipoDeEstlio.Tamaño.valueOf(lineas));
             //System.out.println(TipoDeEstlio.Tamaño.valueOf(lineas));

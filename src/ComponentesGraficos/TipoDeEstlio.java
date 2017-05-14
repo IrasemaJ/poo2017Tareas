@@ -16,4 +16,5 @@ public class TipoDeEstlio {
     public enum Tamaño {UNALINEA, MULTILINEA}
     
     
+    
 }

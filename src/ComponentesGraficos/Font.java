@@ -21,10 +21,8 @@ public class Font extends CuadroTexto{
     public void setEstilo(String estilo) {
         try {
             this.estilo = estilo;
-            TipoDeEstlio al = new TipoDeEstlio();
-            System.out.println("El tipo de tamaño que eligio es: " + 
+            System.out.println("El tipo de fuente que eligio es: " + 
             TipoDeEstlio.Estilo.valueOf(estilo));
-            System.out.println(TipoDeEstlio.Estilo.valueOf(estilo));
         }
         catch(Exception e){            
             Font f = new Font();
